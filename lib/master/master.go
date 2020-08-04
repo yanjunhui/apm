@@ -26,12 +26,12 @@ import "sync"
 
 import "time"
 
-import "github.com/topfreegames/apm/lib/preparable"
-import "github.com/topfreegames/apm/lib/process"
-import "github.com/topfreegames/apm/lib/utils"
-import "github.com/topfreegames/apm/lib/watcher"
+import "main/lib/preparable"
+import "main/lib/process"
+import "main/lib/utils"
+import "main/lib/watcher"
+import log "github.com/sirupsen/logrus"
 
-import log "github.com/Sirupsen/logrus"
 
 // Master is the main module that keeps everything in place and execute
 // the necessary actions to keep the process running as they should be.

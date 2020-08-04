@@ -1,6 +1,6 @@
 package cli
 
-import "github.com/topfreegames/apm/lib/master"
+import "main/lib/master"
 
 import "math"
 import "log"

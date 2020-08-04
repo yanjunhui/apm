@@ -23,10 +23,12 @@ It will start the remote client and return the instance so you can use to initia
 */
 package main
 
-import "github.com/kardianos/osext"
+import (
+	"github.com/kardianos/osext"
+)
 import "gopkg.in/alecthomas/kingpin.v2"
-import "github.com/topfreegames/apm/lib/cli"
-import "github.com/topfreegames/apm/lib/master"
+import "main/lib/cli"
+import "main/lib/master"
 
 import "github.com/sevlyar/go-daemon"
 
@@ -35,8 +37,7 @@ import "path/filepath"
 import "syscall"
 import "os"
 import "os/signal"
-
-import log "github.com/Sirupsen/logrus"
+import log "github.com/sirupsen/logrus"
 
 var (
 	app     = kingpin.New("apm", "Aguia Process Manager.")
@@ -144,6 +145,7 @@ func startRemoteMasterServer() {
 	}
 
 	log.Info("Starting daemon...")
+
 	d, err := ctx.Reborn()
 	if err != nil {
 		log.Fatalf("Failed to reborn daemon due to %+v.", err)
@@ -156,6 +158,7 @@ func startRemoteMasterServer() {
 	defer ctx.Release()
 
 	log.Info("Starting remote master server...")
+
 	remoteMaster := master.StartRemoteMasterServer(*dns, *serveConfigFile)
 
 	sigsKill := make(chan os.Signal, 1)

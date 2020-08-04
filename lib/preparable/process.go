@@ -3,7 +3,7 @@ package preparable
 import "os/exec"
 import "strings"
 
-import "github.com/topfreegames/apm/lib/process"
+import "main/lib/process"
 
 type ProcPreparable interface {
 	PrepareBin() ([]byte, error)

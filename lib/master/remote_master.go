@@ -6,7 +6,7 @@ import "log"
 import "time"
 import "fmt"
 
-import "github.com/topfreegames/apm/lib/process"
+import "main/lib/process"
 
 // RemoteMaster is a struct that holds the master instance.
 type RemoteMaster struct {
